@@ -1,0 +1,21 @@
+{
+  "name": "ep_draw",
+  "description": "Really real time Collaborative painting and drawing with Etherpad",
+  "version": "0.0.2",
+  "author": {
+    "name": "johnyma22",
+    "email": "john@mclear.co.uk",
+    "url": "John McLear"
+  },
+  "contributors": [],
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "_id": "ep_draw@0.1.1",
+  "readme": "ERROR: No README.md file found!",
+  "dist": {
+    "shasum": "927231aee0f19afa7a80fbfff8348401f15b0595"
+  },
+  "_from": "ep_draw"
+}

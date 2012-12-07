@@ -1,0 +1,14 @@
+{
+  "parts":[
+    {
+      "name": "draw",
+      "client_hooks": {
+        "postAceInit": "ep_draw/static/js/draw"
+      },
+      "hooks": {
+        "eejsBlock_scripts": "ep_draw/draw",
+        "eejsBlock_editbarMenuRight": "ep_draw/draw"
+      }
+    }
+  ]
+}
