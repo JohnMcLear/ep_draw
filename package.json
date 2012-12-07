@@ -1,7 +1,7 @@
 {
   "name": "ep_draw",
   "description": "Really real time Collaborative painting and drawing with Etherpad",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "johnyma22",
     "email": "john@mclear.co.uk",
