@@ -1,7 +1,7 @@
-tokbox-etherpad-plugin
+drawing-etherpad-plugin
 ======================
 
-Video conferencing from Tokbox in Etherpad
+drawing and painting in Etherpad
 
 todo
 ====
