@@ -7,6 +7,10 @@
     "email": "john@mclear.co.uk",
     "url": "John McLear"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnyma22/ep_draw"
+  },
   "contributors": [],
   "dependencies": {},
   "engines": {
