@@ -1,12 +1,15 @@
 var postAceInit = function(hook, context){
-  if(draw && draw.onByDefault){ // Setup testing else poop out
-    if(draw.onByDefault === 'true'){
-      enabledraw(draw.key);
-      showdraw();
+  if(draw){
+    if(draw.onByDefault){ // Setup testing else poop out
+      if(draw.onByDefault === 'true'){
+        enabledraw(draw.key);
+        showdraw();
+      }
     }
-  }
-  else{
-    // we don't draw it by default
+    else{
+      $("#draw").hide();
+      // we don't draw it by default
+    }
   }
 }
 

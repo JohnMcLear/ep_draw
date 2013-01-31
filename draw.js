@@ -7,6 +7,10 @@ exports.eejsBlock_scripts = function (hook_name, args, cb) {
     drawString = "<script type='text/javascript'>";
     drawString += "var draw = {}; draw.onByDefault = '"+settings.ep_draw.onByDefault+"'";
     drawString += "</script>";
+  }else{
+    drawString = "<script type='text/javascript'>";
+    drawString += "var draw = {}; draw.onByDefault = 'true'";
+    drawString += "</script>";
   }
   args.content = args.content + drawString; // add Google Analytics to the contents
   return cb();
