@@ -14,4 +14,6 @@ todo
 6. Allow a setting in the settings dropdown to hide the paint (with cookie)
 7. Find out why going outside teh canvas doesnt stop drawing
 8. Allow setting for showing Artist count or not.
-9. 
+9. Clear/reset button
+10. Provide a 'thin' line option
+11. 
