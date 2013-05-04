@@ -18,7 +18,11 @@ function enabledraw(key){
   var authorName = 'Testing';
   var authorColor = $('#usericon a').css("box-shadow");
 
-  var authorColor = '#000'; // Temporary to be deleted once the authorColor draw code exists
+  // Removes extraneous information from the css box-shadow query
+  // so that we are left with rgb(r, g, b)
+  if (authorColor.indexOf(")") > -1 && authorColor.length > authorColor.indexOf(")")) {
+    authorColor = authorColor.substring(0, authorColor.indexOf(")")+1);
+  }
 
   if($("#draw").length === 0){ // If it's not available already tehn draw it
     $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='http://draw.etherpad.org/d/test?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
