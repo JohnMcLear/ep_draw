@@ -26,6 +26,10 @@ function enabledraw(key){
 
   var padID = window.location.href.substr(("http://"+window.location.hostname+"/p/").length);
 
+  if (padID.indexOf("?")!= -1) { 
+    padID = padID.substr(0,padID.indexOf("?"));
+  }
+  
   if($("#draw").length === 0){ // If it's not available already tehn draw it
     $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='http://draw.etherpad.org/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
   }
