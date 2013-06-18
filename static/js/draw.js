@@ -24,7 +24,7 @@ function enabledraw(key){
     authorColor = authorColor.substring(0, authorColor.indexOf(")")+1);
   }
 
-  var padID = window.location.href.substr(("http://"+window.location.hostname+"/p/").length);
+  var padID = window.location.href.substr((location.protocol+"//"+window.location.hostname+"/p/").length);
 
   if (padID.indexOf("?")!= -1) { 
     padID = padID.substr(0,padID.indexOf("?"));
