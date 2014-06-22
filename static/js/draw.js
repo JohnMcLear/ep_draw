@@ -25,13 +25,7 @@ var postAceInit = function(hook, context){
 function enabledraw(key){
 
   var authorName = 'Testing';
-  var authorColor = $('#usericon a').css("box-shadow");
-
-  // Removes extraneous information from the css box-shadow query
-  // so that we are left with rgb(r, g, b)
-  if (authorColor.indexOf(")") > -1 && authorColor.length > authorColor.indexOf(")")) {
-    authorColor = authorColor.substring(0, authorColor.indexOf(")")+1);
-  }
+  var authorColor = $('#myswatch').css('background-color');
 
   var padID = window.location.href.substr((location.protocol+"//"+window.location.hostname+"/p/").length);
 
