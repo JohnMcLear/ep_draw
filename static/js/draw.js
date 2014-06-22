@@ -10,19 +10,23 @@ var postAceInit = function(hook, context){
       $("#draw").hide();
       // we don't draw it by default
     }
+
+    $('.toggle_draw').click(function() {
+        if ($('#draw').length === 0) {
+            enabledraw(draw.key);
+            showdraw();
+        } else {
+            $('#draw').toggle();
+        }
+    });
   }
 }
 
 function enabledraw(key){
 
   var authorName = 'Testing';
-  var authorColor = $('#usericon a').css("box-shadow");
-
-  // Removes extraneous information from the css box-shadow query
-  // so that we are left with rgb(r, g, b)
-  if (authorColor.indexOf(")") > -1 && authorColor.length > authorColor.indexOf(")")) {
-    authorColor = authorColor.substring(0, authorColor.indexOf(")")+1);
-  }
+  var authorColor = $('#myswatch').css('background-color');
+  var draw_host = clientVars.draw_host;
 
   var padID = window.location.href.substr((location.protocol+"//"+window.location.hostname+"/p/").length);
 
@@ -30,8 +34,8 @@ function enabledraw(key){
     padID = padID.substr(0,padID.indexOf("?"));
   }
   
-  if($("#draw").length === 0){ // If it's not available already tehn draw it
-    $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='http://draw.etherpad.org/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
+  if($("#draw").length === 0){ // If it's not available already then draw it
+    $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='//"+draw_host+"/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
   }
 }
 
