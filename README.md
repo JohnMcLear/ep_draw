@@ -3,6 +3,21 @@ drawing-etherpad-plugin
 
 drawing and painting in Etherpad
 
+You must be running an instance [Etherdraw](https://github.com/JohnMcLear/draw).
+
+In your `settings.json`, add:
+
+```
+    "ep_draw" {
+        "host": "your.etherdrawhost.com"
+    }
+
+    # Example
+    "ep_draw" {
+        "host": "localhost:9002"
+    }
+```
+
 todo
 ====
 
