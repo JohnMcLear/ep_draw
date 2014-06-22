@@ -6,7 +6,8 @@
         "postAceInit": "ep_draw/static/js/draw"
       },
       "hooks": {
-        "eejsBlock_scripts": "ep_draw/draw"
+        "eejsBlock_scripts": "ep_draw/draw",
+        "eejsBlock_editbarMenuLeft": "ep_draw/draw"
       }
     }
   ]

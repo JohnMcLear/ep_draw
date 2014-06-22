@@ -2,6 +2,11 @@ var eejs = require('ep_etherpad-lite/node/eejs/');
 var settings = require('ep_etherpad-lite/node/utils/Settings');
 var drawString = "";
 
+exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
+  args.content = args.content + eejs.require("ep_draw/templates/editbarButtons.ejs");
+  return cb();
+}
+
 exports.eejsBlock_scripts = function (hook_name, args, cb) {
   if(settings.ep_draw){ // Setup testing else poop out
     drawString = "<script type='text/javascript'>";

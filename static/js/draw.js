@@ -10,6 +10,15 @@ var postAceInit = function(hook, context){
       $("#draw").hide();
       // we don't draw it by default
     }
+
+    $('.toggle_draw').click(function() {
+        if ($('#draw').is(':visible')) {
+            $('#draw').hide();
+        } else {
+            enabledraw(draw.key);
+            showdraw();
+        }
+    });
   }
 }
 
