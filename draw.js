@@ -7,6 +7,19 @@ exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
   return cb();
 }
 
+exports.clientVars = function(hook, context, callback){
+  var draw_host;
+  try {
+    if (settings.ep_draw.host){
+        draw_host = settings.ep_draw.host;
+    }
+  } catch (e){
+    console.warn("ep_draw.host: host of the etherdraw service");
+    draw_host = "";
+  }
+  return callback({ "draw_host": draw_host });
+};
+
 exports.eejsBlock_scripts = function (hook_name, args, cb) {
   if(settings.ep_draw){ // Setup testing else poop out
     drawString = "<script type='text/javascript'>";
