@@ -26,6 +26,14 @@ exports.clientVars = function(hook, context, callback){
   } catch (e){
     draw.onByDefault = false;
   }
+
+  try {
+    if(settings.ep_draw.icon){
+      draw.icon = settings.ep_draw.icon;
+    }
+  } catch (e){
+    draw.icon = "../static/plugins/ep_draw/static/img/icon.png";
+  }
     
   return callback( { "ep_draw": draw } );
 };

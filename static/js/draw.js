@@ -17,6 +17,15 @@ var postAceInit = function(hook, context){
       toggledraw();
     });
   }
+
+  try {
+    if (clientVars.ep_draw.icon){
+      $('.toggle_draw').css("background-image", 'url('+clientVars.ep_draw.icon+')');
+    }
+  } catch (e) {
+
+  }
+
 }
 
 function enabledraw(){
