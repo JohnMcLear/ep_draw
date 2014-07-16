@@ -26,6 +26,17 @@ var postAceInit = function(hook, context){
 
   }
 
+  try {
+    if (clientVars.ep_draw.position){
+      if(clientVars.ep_draw.position === "right"){
+        $('.draw').parent().prependTo(".menu_right");
+        console.log("movnig icon to the right hand side of the toolbar");
+      }
+    } 
+  } catch (e) {
+
+  }
+
 }
 
 function enabledraw(){

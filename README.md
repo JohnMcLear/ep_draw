@@ -32,6 +32,13 @@ In your `settings.json`, add:
     }
 ```
 
+## To put the icon on the right hand side of the toolbar
+```
+    "ep_draw" {
+        "position": "right"
+    }
+```
+
 
 
 todo
