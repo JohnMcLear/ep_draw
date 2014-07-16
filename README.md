@@ -22,7 +22,6 @@ In your `settings.json`, add:
     "ep_draw" {
         "onByDefault": true
     }
-
 ```
 
 ## To change the icon
@@ -31,7 +30,6 @@ In your `settings.json`, add:
     "ep_draw" {
         "icon": "http://myicon.com/awesomeicon.png"
     }
-
 ```
 
 
