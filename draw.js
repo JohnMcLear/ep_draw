@@ -13,6 +13,9 @@ exports.clientVars = function(hook, context, callback){
   try {
     if (settings.ep_draw.host){
       draw.host = settings.ep_draw.host;
+    }else{
+      console.warn("ep_draw.host NOT SET in settings.json.  The requirement is the host of the etherdraw service IE draw.etherpad.org, copy/paste value to settings.json --  'ep_draw' { 'host': 'your.etherdrawhost.com'}");
+      draw.host = "draw.etherpad.org";
     }
   } catch (e){
     console.warn("ep_draw.host NOT SET in settings.json.  The requirement is the host of the etherdraw service IE draw.etherpad.org, copy/paste value to settings.json --  'ep_draw' { 'host': 'your.etherdrawhost.com'}");
@@ -22,6 +25,8 @@ exports.clientVars = function(hook, context, callback){
   try {
     if(settings.ep_draw.onByDefault){
       draw.onByDefault = true;
+    }else{
+      draw.onByDefault = false;
     }
   } catch (e){
     draw.onByDefault = false;
@@ -30,6 +35,8 @@ exports.clientVars = function(hook, context, callback){
   try {
     if(settings.ep_draw.icon){
       draw.icon = settings.ep_draw.icon;
+    }else{
+      draw.icon = "../static/plugins/ep_draw/static/img/icon.png";
     }
   } catch (e){
     draw.icon = "../static/plugins/ep_draw/static/img/icon.png";
