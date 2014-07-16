@@ -8,28 +8,25 @@ exports.eejsBlock_editbarMenuLeft = function (hook_name, args, cb) {
 }
 
 exports.clientVars = function(hook, context, callback){
-  var draw_host;
+  var draw = {};
+
   try {
     if (settings.ep_draw.host){
-        draw_host = settings.ep_draw.host;
+      draw.host = settings.ep_draw.host;
     }
   } catch (e){
-    console.warn("ep_draw.host: host of the etherdraw service");
-    draw_host = "";
+    console.warn("ep_draw.host NOT SET in settings.json.  The requirement is the host of the etherdraw service IE draw.etherpad.org, copy/paste value to settings.json --  'ep_draw' { 'host': 'your.etherdrawhost.com'}");
+    draw.host = "draw.etherpad.org";
   }
-  return callback({ "draw_host": draw_host });
+
+  try {
+    if(settings.ep_draw.onByDefault){
+      draw.onByDefault = true;
+    }
+  } catch (e){
+    draw.onByDefault = false;
+  }
+    
+  return callback( { "ep_draw": draw } );
 };
 
-exports.eejsBlock_scripts = function (hook_name, args, cb) {
-  if(settings.ep_draw){ // Setup testing else poop out
-    drawString = "<script type='text/javascript'>";
-    drawString += "var draw = {}; draw.onByDefault = '"+settings.ep_draw.onByDefault+"'";
-    drawString += "</script>";
-  }else{
-    drawString = "<script type='text/javascript'>";
-    drawString += "var draw = {}; draw.onByDefault = 'true'";
-    drawString += "</script>";
-  }
-  args.content = args.content + drawString; // add Google Analytics to the contents
-  return cb();
-}

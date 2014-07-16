@@ -1,11 +1,10 @@
-drawing-etherpad-plugin
-======================
-
-drawing and painting in Etherpad
+# Drawing and painting in Etherpad
 
 You must be running an instance [Etherdraw](https://github.com/JohnMcLear/draw).
 
 In your `settings.json`, add:
+
+## To change your host 
 
 ```
     "ep_draw" {
@@ -17,18 +16,33 @@ In your `settings.json`, add:
         "host": "localhost:9002"
     }
 ```
+## To enable by Default
+
+```
+    "ep_draw" {
+        "onByDefault": true
+    }
+
+```
+
+## To change the icon
+
+```
+    "ep_draw" {
+        "icon": "http://myicon.com/awesomeicon.png"
+    }
+
+```
+
+
 
 todo
 ====
 
 1. Make the AuthorName, padID and Authorcolor passed to draw.etherpad.org
-2. Allow setting for draw.etherpad.org (hostname)
-3. Test the onByDefault setting
-4. Allow setting for opacity in setting.json
-5. Document the settings required to get it working
-6. Allow a setting in the settings dropdown to hide the paint (with cookie)
-7. Find out why going outside teh canvas doesnt stop drawing
-8. Allow setting for showing Artist count or not.
-9. Clear/reset button
-10. Provide a 'thin' line option
-11. 
+1. Allow setting for opacity in setting.json
+1. Document the settings required to get it working
+1. Allow a setting in the settings dropdown to hide the paint (with cookie)
+1. Find out why going outside teh canvas doesnt stop drawing
+1. Allow setting for showing Artist count or not.
+1. Clear/reset button
