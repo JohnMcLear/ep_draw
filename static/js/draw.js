@@ -30,7 +30,6 @@ var postAceInit = function(hook, context){
     if (clientVars.ep_draw.position){
       if(clientVars.ep_draw.position === "right"){
         $('.draw').parent().prependTo(".menu_right");
-        console.log("movnig icon to the right hand side of the toolbar");
       }
     } 
   } catch (e) {
@@ -57,6 +56,8 @@ function enabledraw(){
 }
 
 function showdraw(){
+  $("#draw").css({"z-index":"999999", "position":"absolute", "top":"0px", "right":"0px", "height":"200px", "width":"200px", "border":"1px solid #ccc"}).show();
+  $("#drawEmbed").show().css({"overflow":"hidden"});
   if(clientVars.ep_draw.enabled !== true){
     enabledraw();
     $("#draw").hover(function(){
@@ -69,8 +70,6 @@ function showdraw(){
       $(this).data('timeout', t);
     });
   }
-  $("#draw").css({"z-index":"999999", "position":"absolute", "top":"0px", "right":"0px", "height":"200px", "width":"200px", "border":"1px solid #ccc"}).show();
-  $("#drawEmbed").show().css({"overflow":"hidden"});
   clientVars.ep_draw.visible = true;
 }
 
