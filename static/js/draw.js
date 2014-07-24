@@ -53,6 +53,7 @@ function enabledraw(){
     $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='//"+draw_host+"/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
   }
   clientVars.ep_draw.enabled = true;
+  showdraw();
 }
 
 function showdraw(){
@@ -60,30 +61,49 @@ function showdraw(){
   $("#drawEmbed").show().css({"overflow":"hidden"});
   if(clientVars.ep_draw.enabled !== true){
     enabledraw();
+
     $("#draw").hover(function(){
       clearTimeout($(this).data('timeout'));
       $("#draw").animate({"width":"100%", "height": "100%"});;
+      clientVars.ep_draw.fullscreen = true;
     }, function(){
       var t = setTimeout(function() { // Dont zoom out right away, wait a while
         $("#draw").animate({"width":"200px", "height": "200px"});;
+        clientVars.ep_draw.fullscreen = false;
       }, 500);
       $(this).data('timeout', t);
     });
+
   }
   clientVars.ep_draw.visible = true;
 }
 
 function hidedraw(){
   $("#draw").hide();
+  clientVars.ep_draw.fullscreen = false;
   clientVars.ep_draw.visible = false;
 }
 
 function toggledraw(){
-  if(clientVars.ep_draw.visible === true){
+  if(clientVars.ep_draw.visible === true && clientVars.ep_draw.fullscreen){
     hidedraw();
-  }else{
-    showdraw();
+    return;
   }
+  if(!clientVars.ep_draw.visible){
+    console.log("showing draw");
+    showdraw();
+    return;
+  }
+  if(clientVars.ep_draw.visible === true && !clientVars.ep_draw.fullscreen){
+    fullScreenDraw();
+    return;
+  }
+}
+
+function fullScreenDraw(){
+  console.log("drawing full screen");
+  clientVars.ep_draw.fullscreen = true;
+  $("#draw").animate({"width":"100%", "height": "100%"});;
 }
 
 exports.postAceInit = postAceInit;
