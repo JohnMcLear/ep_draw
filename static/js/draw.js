@@ -86,7 +86,6 @@ function toggledraw(){
     return;
   }
   if(!clientVars.ep_draw.visible){
-    console.log("showing draw");
     showdraw();
     return;
   }
@@ -97,7 +96,6 @@ function toggledraw(){
 }
 
 function fullScreenDraw(){
-  console.log("drawing full screen");
   clientVars.ep_draw.fullscreen = true;
   $("#draw").animate({"width":"100%", "height": "100%"});;
 }
