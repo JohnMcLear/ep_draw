@@ -53,7 +53,7 @@ function enabledraw(){
 }
 
 function showdraw(){
-  $("#draw").css({"z-index":"999999", "position":"absolute", "top":"0px", "right":"0px", "height":"200px", "width":"200px", "border":"1px solid #ccc"}).show();
+  $("#draw").css({"z-index":"999999", "position":"absolute", "top":"0px", "right":"13px", "height":"200px", "width":"200px", "border":"1px solid #ccc"}).show();
   $("#drawEmbed").show().css({"overflow":"hidden"});
   if(clientVars.ep_draw.enabled !== true){
     enabledraw();
