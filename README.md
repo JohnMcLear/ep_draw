@@ -6,6 +6,8 @@ In your `settings.json`, add:
 
 ## To change your host 
 
+Set up a host accessible from the users browser.
+
 ```json
     "ep_draw": {
         "host": "your.etherdrawhost.com"
