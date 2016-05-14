@@ -6,35 +6,37 @@ In your `settings.json`, add:
 
 ## To change your host 
 
-```
-    "ep_draw" {
+Set up a host accessible from the user's browser.
+
+```json
+    "ep_draw": {
         "host": "your.etherdrawhost.com"
     }
 
     # Example
-    "ep_draw" {
+    "ep_draw":{
         "host": "localhost:9002"
     }
 ```
 ## To enable by Default
 
-```
-    "ep_draw" {
+```json
+    "ep_draw": {
         "onByDefault": true
     }
 ```
 
 ## To change the icon
 
-```
-    "ep_draw" {
+```json
+    "ep_draw": {
         "icon": "http://myicon.com/awesomeicon.png"
     }
 ```
 
 ## To put the icon on the right hand side of the toolbar
-```
-    "ep_draw" {
+```json
+    "ep_draw": {
         "position": "right"
     }
 ```
