@@ -6,7 +6,7 @@ In your `settings.json`, add:
 
 ## To change your host 
 
-Set up a host accessible from the users browser.
+Set up a host accessible from the user's browser.
 
 ```json
     "ep_draw": {
