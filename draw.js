@@ -41,7 +41,7 @@ exports.clientVars = function(hook, context, callback){
   } catch (e){
     draw.icon = "../static/plugins/ep_draw/static/img/icon.png";
   }
-    
+
   try {
     if(settings.ep_draw.position){
       draw.position = settings.ep_draw.position;

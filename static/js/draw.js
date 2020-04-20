@@ -21,6 +21,10 @@ var postAceInit = function(hook, context){
   try {
     if (clientVars.ep_draw.icon){
       $('.draw_icon').css("background-image", 'url('+clientVars.ep_draw.icon+')');
+      $('.draw_icon').css({
+        height: "16px",
+        width: "16px"
+      });
     }
   } catch (e) {
 
@@ -44,7 +48,7 @@ function enabledraw(){
   var draw_host = clientVars.ep_draw.host;
 
   var padID = clientVars.padId;
-  
+
   if($("#draw").length === 0){ // If it's not available already then draw it
     $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='//"+draw_host+"/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
   }
@@ -53,7 +57,7 @@ function enabledraw(){
 }
 
 function showdraw(){
-  $("#draw").css({"z-index":"999999", "position":"absolute", "top":"0px", "right":"13px", "height":"200px", "width":"200px", "border":"1px solid #ccc"}).show();
+  $("#draw").css({"z-index":"999999", "position":"absolute", "top":"0px", "right":"0px", "height":"200px", "width":"200px", "border":"1px solid #ccc"}).show();
   $("#drawEmbed").show().css({"overflow":"hidden"});
   if(clientVars.ep_draw.enabled !== true){
     enabledraw();
