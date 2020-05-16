@@ -50,7 +50,7 @@ function enabledraw(){
   var padID = clientVars.padId;
 
   if($("#draw").length === 0){ // If it's not available already then draw it
-    $("#editorcontainer").prepend("<div id=draw><iframe id='drawEmbed' src='//"+draw_host+"/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
+    $("#editorcontainer").append("<div id=draw><iframe id='drawEmbed' src='//"+draw_host+"/d/"+padID+"?authorName="+authorName+"&authorColor="+authorColor+"' width='100%' height='100%' style='border:none' frameborder='0' scrolling='no'></iframe></div>");
   }
   clientVars.ep_draw.enabled = true;
   showdraw();
