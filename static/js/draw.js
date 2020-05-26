@@ -65,6 +65,7 @@ function showdraw(){
     $("#draw").hover(function(){
       clearTimeout($(this).data('timeout'));
       $("#draw").animate({"width":"100%", "height": "100%"});;
+      $("#drawEmbed").animate({"width":"100%", "height": "100%"});;
       clientVars.ep_draw.fullscreen = true;
     }, function(){
       var t = setTimeout(function() { // Dont zoom out right away, wait a while
