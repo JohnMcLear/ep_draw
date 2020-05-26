@@ -50,6 +50,6 @@ todo
 1. Allow setting for opacity in setting.json
 1. Document the settings required to get it working
 1. Allow a setting in the settings dropdown to hide the paint (with cookie)
-1. Find out why going outside teh canvas doesnt stop drawing
+1. Find out why going outside the canvas doesnt stop drawing
 1. Allow setting for showing Artist count or not.
 1. Clear/reset button
