@@ -52,6 +52,16 @@ exports.clientVars = function(hook, context, callback){
     draw.position = "right";
   }
 
+  try {
+    if(settings.ep_draw.autoFullscreen){
+      draw.autoFullscreen = true;
+    }else{
+      draw.autoFullscreen = false;
+    }
+  } catch (e){
+    draw.autoFullscreen = false;
+  }
+
 
   return callback( { "ep_draw": draw } );
 };
