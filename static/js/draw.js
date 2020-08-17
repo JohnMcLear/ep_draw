@@ -90,9 +90,13 @@ function toggledraw(){
     hidedraw();
     return;
   }
-  if(!clientVars.ep_draw.visible){
+
+  if(!clientVars.ep_draw.visible && !clientVars.ep_draw.autoFullscreen){
     showdraw();
     return;
+  } else if(!clientVars.ep_draw.visible && clientVars.ep_draw.autoFullscreen){
+    fullScreenDraw();
+    return; 
   }
   if(clientVars.ep_draw.visible === true && !clientVars.ep_draw.fullscreen){
     fullScreenDraw();
