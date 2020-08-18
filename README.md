@@ -26,6 +26,13 @@ Set up a host accessible from the user's browser.
     }
 ```
 
+## To enable fullscreen by Default
+```json
+    "ep_draw": {
+        "autoFullscreen": true
+    }
+```
+
 ## To change the icon
 
 ```json
