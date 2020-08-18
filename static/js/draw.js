@@ -91,12 +91,12 @@ function toggledraw(){
     return;
   }
 
-  if(!clientVars.ep_draw.visible && !clientVars.ep_draw.autoFullscreen){
+  if(!clientVars.ep_draw.visible){
     showdraw();
+    if(clientVars.ep_draw.autoFullscreen){
+      fullScreenDraw();
+    }
     return;
-  } else if(!clientVars.ep_draw.visible && clientVars.ep_draw.autoFullscreen){
-    fullScreenDraw();
-    return; 
   }
   if(clientVars.ep_draw.visible === true && !clientVars.ep_draw.fullscreen){
     fullScreenDraw();
@@ -107,6 +107,7 @@ function toggledraw(){
 function fullScreenDraw(){
   clientVars.ep_draw.fullscreen = true;
   $("#draw").animate({"width":"100%", "height": "100%"});;
+  $("#drawEmbed").animate({"width":"100%", "height": "100%"});;
 }
 
 exports.postAceInit = postAceInit;
