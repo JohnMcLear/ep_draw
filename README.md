@@ -1,3 +1,11 @@
+# Deprecated, use WBO and ep_whiteboard instead :)
+
+Use WBO and ep_whiteboard
+
+https://github.com/lovasoa/whitebophir
+
+https://www.npmjs.com/package/ep_whiteboard
+
 # Drawing and painting in Etherpad
 
 You must be running an instance [Etherdraw](https://github.com/JohnMcLear/draw).
